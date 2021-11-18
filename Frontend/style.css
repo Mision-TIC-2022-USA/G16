@@ -1,3 +1,39 @@
-header{
-    background-color:cadetblue;
+* {
+  font-family: monospace;
+}
+
+p {
+  color: brown;
+  line-height: 2rem;
+  text-indent: 20px;
+  /*word-spacing: 10px;*/
+  /*letter-spacing: 10px;*/
+}
+
+.titulo {
+  font-size: 50px;
+  text-decoration: overline underline;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#titulo2articulo {
+  background-color: burlywood;
+  /*display: inline-block;*/
+}
+
+img {
+  width: 8%;
+  vertical-align: middle;
+}
+
+.tabla1 {
+  caption-side: bottom;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
 }

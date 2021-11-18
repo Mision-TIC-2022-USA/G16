@@ -4,12 +4,58 @@
     <meta charset="UTF-8" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
-      <h1>Soy el Header</h1>
+      <h1 class="titulo">
+        Soy el
+        <img
+          src="https://as01.epimg.net/epik/imagenes/2018/11/05/portada/1541440062_346544_1541440238_noticia_normal_recorte1.jpg"
+          alt="imagel"
+        />
+        Header
+      </h1>
     </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm" >
+          <h1>Columna 1</h1>
+          <p>Columna 1 – Fila 1</p>
+        </div>
+        <div class="col-sm" >
+          <h1>Columna 2</h1>
+          <p>Columna 2 – Fila 1</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <table class="tabla1">
+      <caption>
+        Tabla de Cliente
+      </caption>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+      </tr>
+      <tr>
+        <td>Juan Juan Juan Juan Juan Juan Juan Juan Juan</td>
+        <td>Perez</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Pedro</td>
+        <td>Gonzalez</td>
+        <td>30</td>
+      </tr>
+    </table>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -28,7 +74,7 @@
       </section>
     </aside>
     <article>
-      <h1>Mi articulo 2</h1>
+      <h1 id="titulo2articulo">Mi articulo 2</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
         laudantium architecto fugit odit quidem ab pariatur amet totam
