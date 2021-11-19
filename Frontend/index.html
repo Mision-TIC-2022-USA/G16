@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <header>
+    <header onclick="clickme()" onmouseover="depaso()">
       <h1 class="titulo">
         Soy el
         <img
@@ -24,18 +24,23 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col-sm" >
+        <div class="col-sm">
           <h1>Columna 1</h1>
           <p>Columna 1 – Fila 1</p>
         </div>
-        <div class="col-sm" >
+        <div class="col-sm">
           <h1>Columna 2</h1>
           <p>Columna 2 – Fila 1</p>
         </div>
       </div>
-      
     </div>
-
+    <input type="text" id="input" onkeydown="tecla()" >
+    <select id="select" onchange="cambio()" >
+      <option value="1">opción 1</option>
+      <option value="2">opción 2</option>
+      <option value="3">opción 3</option>
+      <option value="4">opción 4</option>
+    </select>
     <table class="tabla1">
       <caption>
         Tabla de Cliente
