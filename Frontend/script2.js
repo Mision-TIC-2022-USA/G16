@@ -117,5 +117,30 @@ console.log("fin 2");
 console.log("Cargando datos");
 
 
+//-------------------------------------------
+//Manipulacion del DOM
+
+//const elements = document.getElementsByClassName("container");
+//const elements = document.getElementsByTagName("link");
+//const element = document.getElementById("estilos");
+const element = document.querySelector("#estilos");
+const element2 = document.querySelectorAll("input");
+
+//http://127.0.0.1:5500/style1.css
+console.log(element2);
+
+ for (const element of element2) {
+    element.innerHTML = "Hola mundo";
+    element.style.color = "red";
+    element.style.backgroundColor = "yellow";
+    element.style.padding = "20px";
+}
+
+//console.log(elements);
+
+
+
+
+
 
 
