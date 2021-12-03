@@ -1,24 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-
+import HelloMessage from './componentes/HelloMessage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Wiiii!!! es es mi hola mundo react
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HelloMessage nombre="Angel" />
+      <HelloMessage nombre="Mario" />
+      <HelloMessage nombre="Sofia" />
+    </>
   );
 }
 
