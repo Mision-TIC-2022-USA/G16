@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import HelloMessage from './componentes/HelloMessage';
+import TodoApp from './componentes/TodoApp';
 function App() {
 
   let userObj = {
@@ -11,8 +12,7 @@ function App() {
   return (
     <>
       <HelloMessage user={userObj} />
-      {/* <HelloMessage nombre="Mario" />
-      <HelloMessage nombre="Sofia" /> */}
+      <TodoApp />
     </>
   );
 }
