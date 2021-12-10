@@ -14,9 +14,16 @@ class TodoApp extends React.Component {
 
     handleClick(event) {
 
+        //limpiar localStorage
+        //localStorage.clear();
+        //eliminar un item localStorage
+        //localStorage.removeItem("text");
+        //obtener datos del localStorage
+        const text = localStorage.getItem("text");
+        console.log(text);
+
         if (this.state.text.length === 0)
             return;
-
 
         let newItem = {
             id: Date.now(),
@@ -45,6 +52,10 @@ class TodoApp extends React.Component {
                 text: event.target.value
             }
         ));
+
+        //Guardar localStorage
+        localStorage.setItem("text",event.target.value);
+        console.log(event.target.value);
     }
 
     render() {
