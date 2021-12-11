@@ -1,4 +1,5 @@
 import React from "react";
+import { Datacontext } from "./DataContext";
 
 class ClassTimer extends React.Component {
     constructor(props) {
@@ -7,6 +8,8 @@ class ClassTimer extends React.Component {
             time: new Date()
         };
     }
+
+    static contextType = Datacontext;
 
     //Se monta el componente
     componentDidMount() {
@@ -31,9 +34,12 @@ class ClassTimer extends React.Component {
     }
 
     render() {
+
+        const {user} = this.context;
         return (
             <>
                 <h1>Componente de Clase </h1>
+                <pre> usuario {JSON.stringify(user, null, 2)} </pre>
                 <h2> son las {this.state.time.toLocaleTimeString()}</h2>
             </>
         );

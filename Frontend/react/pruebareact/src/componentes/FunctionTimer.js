@@ -1,9 +1,11 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Datacontext } from "./DataContext";
 
 const FunctionTimer = (props) => {
 
     const [time, setTime] = useState(new Date());
+    const {user} = useContext(Datacontext);
 
     useEffect(() => {
 
@@ -23,6 +25,7 @@ const FunctionTimer = (props) => {
     return (
         <>
             <h1>Componente de funcion </h1>
+            <pre>usuario {JSON.stringify(user, null, 2)}</pre>
             <h2> son las {time.toLocaleTimeString()}</h2>
         </>
     )
