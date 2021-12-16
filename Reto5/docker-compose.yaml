@@ -1,0 +1,19 @@
+# Ejemplo archivo docker-compose.yml
+version: '3.9'
+services:
+  frontendreact:
+    container_name: frontend-react
+    image: angelusa/frontend-react
+    ports:
+      - 80:3000
+    volumes:
+      - datafront:/app/scr
+    depends_on:
+      - backendspring
+  backendspring:
+    container_name: backend-springboot
+    image: angelusa/backend-springboot
+    ports:
+      - 8080:8080
+volumes:
+  datafront:
