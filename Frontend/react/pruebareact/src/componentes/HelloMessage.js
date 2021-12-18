@@ -1,8 +1,9 @@
 import React from "react";
 import { Datacontext } from "./DataContext";
 import "./HelloMessage.css"
-import { getPersonas as getPersonasApi } from "../servicios/PersonasService";
 import { Spinner } from "react-bootstrap";
+import { getPersonas, deletePersona } from "../servicios/PersonasService";
+import { Link } from "react-router-dom";
 class HelloMessage extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +16,7 @@ class HelloMessage extends React.Component {
     //Montaje
     componentDidMount() {
         console.log("HelloMessage.componentDidMount");
-        getPersonasApi().then(personas => {
+        getPersonas().then(personas => {
             this.setState(() => ({
                 personas: personas.data,
                 loading: false
@@ -33,6 +34,28 @@ class HelloMessage extends React.Component {
     componentWillUnmount() {
         console.log("HelloMessage.componentWillUnmount");
     }
+
+    //edit personas
+    handleEditar = (event, id) => {
+        event.preventDefault();
+        console.log("handleEditar", id);
+    }
+
+    //delete personas
+    handleEliminar = (event, id) => {
+
+        console.log("handleEliminar", id);
+        deletePersona(id).then(personas => {
+            this.setState((state) => ({
+                personas: state.personas.filter(persona => persona.id !== id)
+            }));
+            console.log("personas", personas.data);
+        }).catch(error => {
+            console.log("error", error);
+        });
+
+    }
+
 
     render() {
         function formatNombre(user) {
@@ -61,6 +84,7 @@ class HelloMessage extends React.Component {
                             <th>Nombre</th>
                             <th>Edad</th>
                             <th>Correo</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,7 +92,7 @@ class HelloMessage extends React.Component {
                             this.state.loading ?
                                 (
                                     <tr>
-                                        <td colSpan="4" className="text-center">
+                                        <td colSpan="5" className="text-center">
                                             <Spinner animation="grow" />
                                         </td>
                                     </tr>
@@ -79,10 +103,15 @@ class HelloMessage extends React.Component {
                                         <td>{persona.nombre}</td>
                                         <td>{persona.edad}</td>
                                         <td>{persona.correo}</td>
+                                        <td>
+                                            <Link to={"/persona/create/" + persona.id} className="btn btn-primary m-1">Editar</Link>
+                                            <button onClick={(event, id) => this.handleEliminar(event, persona.id)} className="btn btn-danger">Eliminar</button>
+                                        </td>
                                     </tr>
                                 )))}
                     </tbody>
                 </table>
+                <Link to="/persona/create/0" className="btn btn-secondary">Crear Persona</Link>
             </>
         )
     }

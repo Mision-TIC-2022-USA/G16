@@ -8,6 +8,8 @@ import { Datacontext } from './componentes/DataContext';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import  CreatePersona  from './componentes/CreatePersona';
+import Login  from './componentes/Login';
 function App() {
 
   let userObj = {
@@ -44,10 +46,12 @@ function App() {
 
         <Datacontext.Provider value={{ user, setUser }}>
           <Routes>
+          <Route path="/" element={<Login />} />
             <Route path="HelloMessage" element={<HelloMessage />} />
             <Route path="TodoApp" element={<TodoApp />} />
             <Route path="ClassTimer" element={<ClassTimer />} />
             <Route path="FunctionTimer" element={<FunctionTimer />} />
+            <Route path="/persona/create/:idpersona" element={<CreatePersona />} />
           </Routes>
         </Datacontext.Provider>
       </Router>
